@@ -1,0 +1,23 @@
+h3 {
+    color: crimson;
+}
+
+h3.inside{
+    font-family: monospace;
+}
+
+article p{
+    text-align: justify;
+}
+
+article>p {
+    border: 1px solid black;
+}
+
+h3+p {
+    text-decoration: line-through;
+}
+
+h3~p {
+    font-family: sans-serif;
+}
