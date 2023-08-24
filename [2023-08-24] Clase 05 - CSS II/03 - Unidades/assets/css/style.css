@@ -1,0 +1,43 @@
+:root {
+    font-size: 20px;
+}
+
+body {
+    margin: 0;
+}
+
+section {
+    height: 100vh;
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+#ch p{
+    width: 50ch;
+    margin: 1rem;
+    border: 1px solid black;
+}
+
+#ch p:nth-child(3) {
+    font-family: monospace;
+}
+
+#em-rem {
+    font-size: 10px;
+}
+
+#em-rem>div {
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+#em {
+    width: 1em;
+    height: 1em;
+}
+
+#rem {
+    width: 1rem;
+    height: 1rem;
+}

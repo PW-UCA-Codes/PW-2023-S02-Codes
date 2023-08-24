@@ -1,0 +1,22 @@
+#unique {
+    background-color: greenyellow;
+}
+
+div {
+    margin: 1rem;
+
+    width: 200px;
+    height: 100px;
+
+    background-color: bisque;
+    border: 1px solid black;
+}
+
+.box {
+    background-color: aliceblue;
+}
+
+.square {
+    width: 100px;
+    background-color: crimson;
+}

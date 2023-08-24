@@ -1,0 +1,47 @@
+section {
+    margin: 3rem 0;
+}
+
+#block>p{
+    display: block; /* Redundante */
+
+    width: 50%;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+#inline>a{
+    display: inline; /* Redundante */
+    
+    padding: 1rem;
+    border: 1px solid crimson;
+
+    width: 200px;
+}
+
+#block:hover+#inline {
+    /* display: none; */
+    visibility: hidden;
+}
+
+#inline-block>a{
+    display: inline-block; /* Redundante */
+    
+    padding: 1rem;
+    border: 1px solid crimson;
+
+    width: 200px;
+}
+
+#box-sizing>div {
+    margin: 16px;
+    padding: 16px;
+    border: 5px solid black;
+
+    width: 150px;
+    height: 150px;
+}
+
+#border{
+    box-sizing: border-box;
+}
