@@ -1,0 +1,148 @@
+$theme-text-font: "Roboto", sans-serif;
+$theme-title-font: "Quicksand", sans-serif;
+$theme-items-font: "Montserrat", sans-serif;
+
+$theme-bacckground-color: #512DA8;
+$theme-accept-color: #388E3C;
+$theme-deny-color: #D32F2F;
+
+$theme-base-spacing: 1rem;
+$theme-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+:root {
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+
+    font-family: $theme-text-font;
+    font-weight: 300;
+}
+
+@mixin flexbox($dir: row, $wrap: wrap, $gap: $theme-base-spacing) {
+    display: flex;
+    flex-flow: $dir $wrap;
+    gap: $gap;
+}
+
+@mixin square($side: 1rem) {
+    width: $side;
+    height: $side;
+}
+
+@mixin fluid-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@mixin raindrop-border($size: $theme-base-spacing) {
+    border-radius: $size 0;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: $theme-bacckground-color;
+
+    >header {
+        width: 100%;
+        padding: $theme-base-spacing;
+        background: black;
+        color: white;
+
+        position: sticky;
+        top: 0;
+
+        h1 {
+            text-align: center;
+            font-family: $theme-title-font;
+        }
+    }
+
+    .cards {
+        width: 100%;
+        padding: $theme-base-spacing;
+
+        @include flexbox();
+        justify-content: center;
+
+        .card {
+            flex: 1 0 300px;
+            max-width: 450px;
+
+            padding: $theme-base-spacing;
+
+            background: white;
+            
+            @include flexbox(column, nowrap, $theme-base-spacing);
+            align-items: center;
+            justify-content: space-between;
+
+            @include raindrop-border();
+            box-shadow: $theme-box-shadow;
+
+            >figure {
+                @include square(10rem);
+                
+                border-radius: 50%;
+                overflow: hidden;
+
+                img {
+                    @include fluid-img();
+                }
+            }
+
+            >h3 {
+                font-family: $theme-title-font;
+                font-size: 1.5rem;
+            }
+
+            >.text-container {
+                @include flexbox(column, nowrap, $theme-base-spacing * 0.5);
+
+                p {
+                    text-align: justify;
+                }
+            }
+
+            >.btn-container {
+                align-self: stretch;
+
+                @include flexbox($theme-base-spacing * 0.5);
+
+                button {
+                    flex: 1 0 100px;
+                    padding: $theme-base-spacing * 0.5;
+                    
+                    color: white;
+                    font-family: $theme-items-font;
+                    font-size: 1.3rem;
+
+                    background: none;
+                    border: none;
+
+                    @include raindrop-border();
+                    transition: all ease-in-out 250ms;
+                    cursor: pointer;
+
+                    &:first-child {
+                        background: $theme-deny-color;
+                    }
+
+                    &:last-child {
+                        background: $theme-accept-color;
+                    }
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+    }
+}
