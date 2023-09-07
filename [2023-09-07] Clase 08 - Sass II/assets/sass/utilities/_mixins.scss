@@ -1,0 +1,22 @@
+@use "variables" as v;
+
+@mixin flexbox($dir: row, $wrap: wrap, $gap: v.$theme-base-spacing) {
+    display: flex;
+    flex-flow: $dir $wrap;
+    gap: $gap;
+}
+
+@mixin square($side: 1rem) {
+    width: $side;
+    height: $side;
+}
+
+@mixin fluid-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@mixin raindrop-border($size: v.$theme-base-spacing) {
+    border-radius: $size 0;
+}
