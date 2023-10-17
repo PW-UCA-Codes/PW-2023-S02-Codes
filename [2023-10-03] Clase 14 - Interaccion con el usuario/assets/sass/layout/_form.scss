@@ -1,0 +1,37 @@
+@use "../utilities" as u;
+
+section.form-section {
+    width: 100%;
+    padding: u.$theme-base-spacing;
+
+    @include u.flexbox();
+    justify-content: center;
+    align-items: center;
+
+    >form {
+        flex-grow: 1;
+        max-width: 768px;
+        padding: u.$theme-base-spacing;
+
+        background: white;
+        border-radius: 8px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+
+        label {
+            @include u.flexbox(column, nowrap, 0.5rem);
+
+            input, textarea {
+                padding: 0.5rem;
+                resize: none;  
+            }
+        }
+
+        [type="submit"] {
+            grid-column: 1 / -1;
+            padding: 0.5rem;
+        }
+    }
+}
