@@ -1,9 +1,9 @@
 import PokeCard from "./PokeCard/PokeCard";
 
 const PokeParty = ({ list= [] }) => {
-    const pokeList = list.map(_p => {
+    const pokeList = list.map((_p, i) => {
         return (
-            <PokeCard key={`${_p.index}-card`} pokemon={_p}/>
+            <PokeCard key={`${_p.index}-${i}-card`} pokemon={_p}/>
         );
     });
 
